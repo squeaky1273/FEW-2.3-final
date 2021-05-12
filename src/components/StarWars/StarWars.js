@@ -8,6 +8,7 @@ import Details from '../Detail/Detail';
 function StarWars() {
     const [number, setNumber] = useState(0)
     const [data, setData] = useState(null)
+    const [homeworld, setHomeWorld] = useState(null)
     const [character, setCharacter] = useState([])
 
     async function getCharacter() {
@@ -23,6 +24,12 @@ function StarWars() {
         const eye_color = json.eye_color
         console.log(json)
         setData({ name, height, mass, hair_color, eye_color})
+
+        const hw_res = await fetch(json.homeworld)
+        const hw_json = await hw_res.json()
+
+        console.log(hw_json.name)
+        setHomeWorld(hw_json.name)
     }
 
     return (
@@ -30,7 +37,7 @@ function StarWars() {
             {/* <Title name={data ? data.name : 'No character chosen'} /> */}
             {/* <Details data={data ? data : null } /> */}
             {data ? <Title {...data}/>: null}
-            {data ? <Details {...data}/>: null}
+            <Details data={data ? data : null } homeworld={homeworld} />
             <form
             onSubmit={e => {
                 e.preventDefault()
@@ -56,6 +63,7 @@ function StarWars() {
                         <h5>Height: {char.height}</h5>
                         <h5>Hair Color: {char.hair_color}</h5>
                         <h5>Eye Color: {char.eye_color}</h5>
+                        <h5>homeworld: {homeworld}</h5>
                     </div>
                 )
             }) 
