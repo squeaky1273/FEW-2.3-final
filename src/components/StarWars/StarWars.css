@@ -1,0 +1,58 @@
+.StarWars input {
+    border: 1px solid;
+    padding: 20px;
+    font-size: 1em;
+    margin: 0;
+    border-radius: 0.5em 0 0 0.5em;
+  }
+  
+.StarWars button {
+    border: 1px solid black;
+    padding: 20px;
+    font-size: 1em;
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+
+
+.StarWars h1 {
+  /* color: green; */
+  font-family: 'weather';
+  font-size: 60px;
+  margin: 10px;
+}
+
+
+.Weather h4 {
+  /* color: rgb(8, 0, 165); */
+  font-size: 30px;
+  margin: 5px;
+}
+
+.StarWars {
+  background-image: linear-gradient(to bottom right, rgb(24, 0, 5), rgb(58, 0, 25));
+  background-size: 1000% 400%;
+	animation: gradient 15s ease infinite;
+	font-weight: 400;
+  padding: 75px;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  text-align: center;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.row {
+  padding: 10px;
+  margin: auto;
+}

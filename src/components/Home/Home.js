@@ -5,8 +5,7 @@ function Home() {
 
     return(
         <div>
-            <h1>FEW 2.3: Single Page Application</h1>
-            <h2>Padyn Riddell</h2>
+            <h1>FEW 2.3: Final - Padyn Riddell</h1>
             <StarWars />
         </div>
     )

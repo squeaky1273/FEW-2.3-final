@@ -1,11 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
+import Title from '../Title/Title';
 import Details from '../Detail/Detail';
+
+// import './StarWars.css';
 
 function StarWars() {
     const [number, setNumber] = useState(0)
     const [data, setData] = useState(null)
-    // const [character, setCharacter] = useState([])
+    const [character, setCharacter] = useState([])
 
     async function getCharacter() {
         const path=`https://swapi.dev/api/people/${number}/`
@@ -26,6 +29,7 @@ function StarWars() {
         <div className="StarWars">
             {/* <Title name={data ? data.name : 'No character chosen'} /> */}
             {/* <Details data={data ? data : null } /> */}
+            {data ? <Title {...data}/>: null}
             {data ? <Details {...data}/>: null}
             <form
             onSubmit={e => {
@@ -39,12 +43,23 @@ function StarWars() {
                 onChange={(e) => setNumber(e.target.value)}
             />
             <button>Get Character</button>
-            {/* <input 
+            <input
                 type='button' 
                 value='Save Character' 
-                onClick={ () =>  setCharacter( characters => [ ...characters, data])}
-            /> */}
+                onClick={ () =>  setCharacter( character => [ ...character, data])}
+            />
             </form>    
+            { character.map((char) => {
+                return (
+                    <div>
+                        <Title name={char.name} />
+                        <h5>Height: {char.height}</h5>
+                        <h5>Hair Color: {char.hair_color}</h5>
+                        <h5>Eye Color: {char.eye_color}</h5>
+                    </div>
+                )
+            }) 
+            }
         </div>
     )
 }
