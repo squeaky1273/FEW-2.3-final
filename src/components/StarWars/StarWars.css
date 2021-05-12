@@ -1,15 +1,15 @@
 .StarWars input {
     border: 1px solid;
-    padding: 20px;
-    font-size: 1em;
+    padding: 15px;
+    font-size: 15px;
     margin: 0;
     border-radius: 0.5em 0 0 0.5em;
   }
   
 .StarWars button {
     border: 1px solid black;
-    padding: 20px;
-    font-size: 1em;
+    padding: 15px;
+    font-size: 15px;
     margin: 0;
     background-color: black;
     color: white;
@@ -24,35 +24,29 @@
 }
 
 
-.Weather h4 {
+.StarWars h4 {
   /* color: rgb(8, 0, 165); */
   font-size: 30px;
   margin: 5px;
 }
 
-.StarWars {
-  background-image: linear-gradient(to bottom right, rgb(24, 0, 5), rgb(58, 0, 25));
-  background-size: 1000% 400%;
-	animation: gradient 15s ease infinite;
-	font-weight: 400;
-  padding: 75px;
-  border-radius: 0.5em 0.5em 0.5em 0.5em;
-  text-align: center;
+.Character {
+    max-width: 1200px;
+    margin: auto;
+    border: 5px solid #F5F5F5;
+    
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
-.row {
-  padding: 10px;
-  margin: auto;
-}
+  /* Smaller screens and tablets */
+  @media only screen and (max-width: 960px) {
+    .Character {
+        grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  /* Small screens mobile */
+  @media only screen and (max-width: 700px) {
+    .Character {
+        grid-template-columns: 1fr;
+    }
+  } 

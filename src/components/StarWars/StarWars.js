@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Title from '../Title/Title';
 import Details from '../Detail/Detail';
 
-// import './StarWars.css';
+import './StarWars.css';
 
 function StarWars() {
     const [number, setNumber] = useState(0)
@@ -34,7 +34,6 @@ function StarWars() {
 
     return (
         <div className="StarWars">
-            {/* <Title name={data ? data.name : 'No character chosen'} /> */}
             {/* <Details data={data ? data : null } /> */}
             {data ? <Title {...data}/>: null}
             <Details data={data ? data : null } homeworld={homeworld} />
@@ -58,7 +57,7 @@ function StarWars() {
             </form>    
             { character.map((char) => {
                 return (
-                    <div>
+                    <div className="Character">
                         <Title name={char.name} />
                         <h5>Height: {char.height}</h5>
                         <h5>Hair Color: {char.hair_color}</h5>
